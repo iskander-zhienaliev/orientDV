@@ -1,0 +1,46 @@
+{
+  "name": "orientDV",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "npm run build --development",
+    "dev": "webpack-dev-server --hot --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sso-stroitel/orientDV.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sso-stroitel/orientDV/issues"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 3 version"
+  ],
+  "homepage": "https://github.com/sso-stroitel/orientDV#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.4.5",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.0.0",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.10",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^4.1.0",
+    "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.35.0",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2"
+  }
+}

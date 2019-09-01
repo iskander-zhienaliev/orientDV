@@ -1,0 +1,54 @@
+{% load static from staticfiles %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Хабаровская федерация спортивного ориентирования</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+{% block header %}
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__emblem"></div>
+            <div class="header__title">Хабаровская региональная общественная организация
+                «Федерация спортивного ориентирования»
+            </div>
+            <div class="header__title--mob">ХРОО "ФСО"</div>
+            <div class="header__logo">Лого</div>
+            <div class="header__burger js-burger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <nav class="nav js-nav">
+        <ul class="container nav__menu">
+            <li><a href="/#/">Календарь</a></li>
+            <li><a href="/#/">Контакты</a></li>
+            <li><a href="/documents/">Документы</a></li>
+            <li><a href="/#/">История</a></li>
+            <li><a href="/#/">Спортивные карты</a></li>
+            <li><a href="/gallery/">Фото</a></li>
+            {% if posts %}
+                <li class="js-search-btn nav__search-btn">{% include 'search.html' %}</li>
+                <form class="nav__form js-nav-form">
+                    <input class="js-nav-input" type="text">
+                </form>
+            {% endif %}
+
+        </ul>
+    </nav>
+{% endblock %}
+<main class="container">
+    {% block content %}
+    {% endblock %}
+</main>
+<script defer src="{% static 'index.bundle.js' %}"></script>
+</body>
+</html>

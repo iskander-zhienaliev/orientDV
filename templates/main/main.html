@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="main">
+        <section class="news js-news">
+            {% include 'main/news.html' %}
+        </section>
+        <aside class="aside js-aside">
+            <div class="aside__item">
+                <div class="aside__title">Ближайшие старты</div>
+                <div class="aside__content-wrapper">
+                    {% for start in starts_season %}
+                        {% if forloop.first %}
+                            <div class="aside__content">
+                            <div class="aside__content-name">Сезонные</div>
+                        {% endif %}
+                        <a href="http://{{ start.link }}" class="aside__content-item">{{ start.title }}</a>
+                    {% endfor %}
+                    </div>
+                    {% for start in starts_month %}
+                        {% if forloop.first %}
+                            <div class="aside__content">
+                            <div class="aside__content-name">По месяцам</div>
+                        {% endif %}
+                        <a href="http://{{ start.link }}" class="aside__content-item">{{ start.title }}</a>
+                        <span>{{ start.start_on|date:"d.m.y" }} {% if start.end_on %}-
+                            {{ start.end_on|date:"d.m.y" }}{% endif %}</span>
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="aside__item">
+                <div class="aside__title">Партнеры</div>
+                <div class="aside__content-wrapper">
+                    {% for partner in partners %}
+                        {% if forloop.first %}
+                            <div class="aside__content aside__content-imgs">
+                        {% endif %}
+                        {#                    <img class="aside__content-img" src="{{ partner.image.url }}" alt="">#}
+                        <a href="http://{{ partner.link }}" class="aside__content-item">{{ partner.title }}</a>
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+{% endblock %}

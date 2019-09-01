@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+<div class="aside__content-wrapper">
+    {% for start in starts_season %}
+        {% if forloop.first %}
+            <div class="aside__content">
+            <div class="aside__content-name">Сезонные</div>
+        {% endif %}
+        <a href="http://{{ start.link }}" class="aside__content-item">{{ start.title }}</a>
+    {% endfor %}
+    </div>
+    {% for start in starts_month %}
+        {% if forloop.first %}
+            <div class="aside__content">
+            <div class="aside__content-name">По месяцам</div>
+        {% endif %}
+        <a href="http://{{ start.link }}" class="aside__content-item">{{ start.title }}</a>
+        <span>{{ start.start_on|date:"d.m.y" }} {% if start.end_on %}-
+            {{ start.end_on|date:"d.m.y" }}{% endif %}</span>
+    {% endfor %}
+    </div>
+</div>

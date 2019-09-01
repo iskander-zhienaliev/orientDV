@@ -1,0 +1,31 @@
+.photos__container {
+  background-color: #fff;
+  font-size: 16rem;
+  padding: 30rem;
+}
+
+.photos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  li {
+    position: relative;
+    flex: 0 0 auto;
+    width: 150rem;
+    margin-bottom: 20rem;
+    height: 100rem;
+
+    img {
+      bottom: 0;
+      height: 100%;
+      left: 0;
+      object-fit: cover;
+      object-position: center;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+    }
+  }
+}

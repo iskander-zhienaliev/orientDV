@@ -1,0 +1,6 @@
+$container-width: 1200;
+$orange: #d94d3c;
+
+@mixin mobile {
+  @media (max-width: 420px) { @content; }
+}

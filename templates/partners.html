@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+<div class="aside__content-wrapper">
+    {% for partner in partners %}
+        {% if forloop.first %}
+            <div class="aside__content aside__content-imgs">
+        {% endif %}
+        {#                    <img class="aside__content-img" src="{{ partner.image.url }}" alt="">#}
+        <a href="http://{{ partner.link }}" class="aside__content-item">{{ partner.title }}</a>
+    {% endfor %}
+    </div>
+</div>

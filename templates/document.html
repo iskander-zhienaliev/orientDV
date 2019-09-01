@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="main">
+        <a class="to-back" href="/">На главную</a>
+        {% for document in documents %}
+            <a class="document" href="http://{{ document.link }}">{{ document.title }}</a>
+        {% endfor %}
+    </div>
+{% endblock %}

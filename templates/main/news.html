@@ -1,0 +1,14 @@
+{% for post in posts %}
+    <div class="news__item js-news-item" data-hasnext="{{ next_url }}">
+        <div class="news__img" {% if post.image %}style="background-image: url({{ post.image.url }})"{% endif %}></div>
+        <div class="news__info">
+            <div class="news__title">{{ post.title }} {{ is_paginated }}</div>
+            <div class="news__date">{{ post.created_on }}</div>
+            <div class="news__content">{{ post.preview|striptags }}</div>
+            <a href="{% url 'detail' post.id %}" class="news__btn">Читать</a>
+        </div>
+    </div>
+    {% if forloop.last and page_number == 1 and next_url %}
+        <div class="more js-more" data-next="{{ next_url }}" data-page="{{ page_number }}">Показать еще</div>
+    {% endif %}
+{% endfor %}

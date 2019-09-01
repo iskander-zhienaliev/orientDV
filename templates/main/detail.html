@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="detail">
+        <a class="to-back" href="/">На главную</a>
+        <h1 class="detail__title">{{ post.title }}</h1>
+        <h4 class="detail__date">{{ post.created_on }}</h4>
+        <div class="detail__content">{{ post.content|safe }}</div>
+    </div>
+{% endblock %}
